@@ -1,0 +1,5 @@
+# Module gwtdogmatix
+# RPC service class, partial path of RPC policy file
+com.kaipa.keyword.client.AddService, E11150C64FAC9D93DB175BE4ECC1F984.gwt.rpc
+com.kaipa.keyword.client.DeleteService, 2467C7DA558045EC1DA8D0DD583576CC.gwt.rpc
+com.kaipa.keyword.client.GetKeywordsService, 7C830F27ED787EBD82E4BEE23191A996.gwt.rpc

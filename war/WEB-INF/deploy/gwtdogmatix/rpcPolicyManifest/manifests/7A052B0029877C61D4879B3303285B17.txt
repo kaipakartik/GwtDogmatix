@@ -1,0 +1,2 @@
+serviceClass: com.kaipa.keyword.client.DeleteService
+path: 2467C7DA558045EC1DA8D0DD583576CC.gwt.rpc

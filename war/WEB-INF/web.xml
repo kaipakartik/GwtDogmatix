@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?><web-app xmlns="http://java.sun.com/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" version="2.5" xsi:schemaLocation="http://java.sun.com/xml/ns/javaee                http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd">
+	<listener>
+		<listener-class>com.kaipa.keyword.server.ContextInitializer</listener-class>
+	</listener>	
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>greetServlet</servlet-name>
+    <servlet-class>com.kaipa.keyword.server.GreetingServiceImpl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>greetServlet</servlet-name>
+    <url-pattern>/gwtdogmatix/greet</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>addServlet</servlet-name>
+    <servlet-class>com.kaipa.keyword.server.AddServiceImpl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>addServlet</servlet-name>
+    <url-pattern>/gwtdogmatix/add</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>deleteServlet</servlet-name>
+    <servlet-class>com.kaipa.keyword.server.DeleteServiceImpl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteServlet</servlet-name>
+    <url-pattern>/gwtdogmatix/delete</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>getKeywordsServlet</servlet-name>
+    <servlet-class>com.kaipa.keyword.server.GetKeywordsServiceImpl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>getKeywordsServlet</servlet-name>
+    <url-pattern>/gwtdogmatix/get</url-pattern>
+  </servlet-mapping>
+  
+  	<servlet>
+		<servlet-name>Keyword</servlet-name>
+		<servlet-class>com.kaipa.keyword.server.KeywordServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>Keyword</servlet-name>
+		<url-pattern>/key</url-pattern>
+	</servlet-mapping>
+  
+  
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>GwtDogmatix.html</welcome-file>
+  </welcome-file-list>
+
+  <servlet>
+    <servlet-name>SystemServiceServlet</servlet-name>
+    <servlet-class>com.google.api.server.spi.SystemServiceServlet</servlet-class>
+    <init-param>
+      <param-name>services</param-name>
+      <param-value/>
+    </init-param>
+  </servlet>
+
+	<security-constraint>
+       <web-resource-collection>
+           <url-pattern>/*</url-pattern>
+       </web-resource-collection>
+       <auth-constraint>
+           <role-name>*</role-name>
+       </auth-constraint>
+   </security-constraint>
+
+  <servlet-mapping>
+    <servlet-name>SystemServiceServlet</servlet-name>
+    <url-pattern>/_ah/spi/*</url-pattern>
+  </servlet-mapping>
+
+</web-app>
