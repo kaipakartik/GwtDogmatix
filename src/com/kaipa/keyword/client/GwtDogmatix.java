@@ -7,11 +7,15 @@ import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.event.dom.client.ClickEvent;
 import com.google.gwt.event.dom.client.ClickHandler;
+import com.google.gwt.event.dom.client.KeyCodes;
+import com.google.gwt.event.dom.client.KeyUpEvent;
+import com.google.gwt.event.dom.client.KeyUpHandler;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
 import com.google.gwt.user.client.ui.Button;
 import com.google.gwt.user.client.ui.FlexTable;
 import com.google.gwt.user.client.ui.HorizontalPanel;
+import com.google.gwt.user.client.ui.Label;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.VerticalPanel;
@@ -28,6 +32,8 @@ public class GwtDogmatix implements EntryPoint {
 	private FlexTable globalKeywordsTable;
 	
 	
+	private Label keywordLabel = new Label("Key");
+	private Label urlLabel = new Label("Url");
 	private TextBox keywordBox;
 	private TextBox urlBox;
 	
@@ -59,10 +65,13 @@ public class GwtDogmatix implements EntryPoint {
 		// Create the horizontal Panel
 		keywordBox = new TextBox();
 		urlBox = new TextBox();
+		urlBox.setText("http://");
 
 		addButton = new Button("Add");
 		
+		addPanel.add(keywordLabel);
 		addPanel.add(keywordBox);
+		addPanel.add(urlLabel);
 		addPanel.add(urlBox);
 		addPanel.add(addButton);
 		
@@ -114,7 +123,7 @@ public class GwtDogmatix implements EntryPoint {
 		privateKeywordsTable.setText(rows, 0, keyword);
 		privateKeywordsTable.setText(rows, 1, url);
 		keywordBox.setText("");
-		urlBox.setText("");
+		urlBox.setText("http://");
 		addService.add(keyword, url, new AsyncCallback<String>() {
 			public void onFailure(Throwable caught) {
 				Window.alert("failed add");
