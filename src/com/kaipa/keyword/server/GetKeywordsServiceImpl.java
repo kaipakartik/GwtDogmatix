@@ -35,8 +35,8 @@ public class GetKeywordsServiceImpl extends RemoteServiceServlet implements
 	}
 
 	@Override
-	public Boolean doesKeyExist(String key) throws IllegalArgumentException {
-		Keyword keyword = KeywordDatastore.findForUser(key);
+	public Boolean doesKeyExistGlobally(String key) throws IllegalArgumentException {
+		Keyword keyword = KeywordDatastore.findInGlobalAsWell(key);
 		return keyword != null;
 	}
 }

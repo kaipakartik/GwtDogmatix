@@ -30,10 +30,10 @@ public class KeywordServlet extends HttpServlet {
 			return;
 		}
 		query = query.toLowerCase();
-		Keyword keyword = KeywordDatastore.findForUser(query);
+		Keyword keyword = KeywordDatastore.findInGlobalAsWell(query);
 		if (keyword != null) {
 			keyword.incrementCount();
-			KeywordDatastore.save(keyword);
+			KeywordDatastore.update(keyword);
 			resp.sendRedirect(keyword.getUrl());
 		} else {
 			resp.sendRedirect(String.format("/?k=%s",

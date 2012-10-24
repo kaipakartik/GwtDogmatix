@@ -41,6 +41,8 @@ public class GwtDogmatix implements EntryPoint {
 
 	private Button addButton;
 	private Button goButton= new Button("Go");
+	
+	private Label helpLabel = new Label("Add keywords and urls here. While adding the urls the best way to ensure that you are right is to copy it from your browser");
 
 	private List<String> keywords = new ArrayList<String>();;
 
@@ -65,6 +67,7 @@ public class GwtDogmatix implements EntryPoint {
 	public void onModuleLoad() {
 		RootPanel rootPanel = RootPanel.get();
 		mainPanel = new VerticalPanel();
+		mainPanel.add(helpLabel);
 		addPanel = new HorizontalPanel();
 		goPanel = new HorizontalPanel();
 
@@ -72,7 +75,7 @@ public class GwtDogmatix implements EntryPoint {
 		goPanel.add(goLabel);
 		goPanel.add(goBox);
 		goPanel.add(goButton);
-		mainPanel.add(goPanel);
+		rootPanel.add(goPanel);
 
 		// Create the horizontal Panel
 		keywordBox = new TextBox();
@@ -101,11 +104,10 @@ public class GwtDogmatix implements EntryPoint {
 
 			@Override
 			public void onSuccess(List<Keyword> result) {
-				// TODO Auto-generated method stub
-				keywordBox.setFocus(true);
 				for (Keyword keyword : result) {
 					addKeyAndUrl(keyword.getKeyword(), keyword.getUrl());
 				}
+				goBox.setFocus(true);
 			}
 
 		});
@@ -140,7 +142,7 @@ public class GwtDogmatix implements EntryPoint {
 
 	private void goToUrl() {
 		final String key = goBox.getText();
-		keywordsService.doesKeyExist(goBox.getText(),
+		keywordsService.doesKeyExistGlobally(goBox.getText(),
 				new AsyncCallback<Boolean>() {
 					@Override
 					public void onFailure(Throwable caught) {

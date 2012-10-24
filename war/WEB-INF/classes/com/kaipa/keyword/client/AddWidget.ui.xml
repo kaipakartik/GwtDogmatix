@@ -1,0 +1,19 @@
+<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
+    xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+
+	<g:HorizontalPanel ui:field='goPanel'>
+		<g:Label>Key</g:Label>
+		<g:TextBox ui:field='goBox'></g:TextBox>
+		<g:Button>Go</g:Button>	
+	</g:HorizontalPanel>
+  <g:VerticalPanel ui:field='mainPanel'>
+	<g:HorizontalPanel ui:field='addPanel'>
+		<g:Label>Key</g:Label>
+		<g:TextBox ui:field='keyBox'></g:TextBox>
+		<g:Label>Url</g:Label>
+		<g:TextBox ui:field='urlBox'></g:TextBox>
+		<g:Button ui:field='addButton' enabled="false">Add</g:Button>
+	</g:HorizontalPanel>
+  </g:VerticalPanel>
+
+</ui:UiBinder>

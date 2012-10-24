@@ -12,5 +12,5 @@ import com.kaipa.keyword.shared.Keyword;
 @RemoteServiceRelativePath("get")
 public interface GetKeywordsService extends RemoteService {
 	List<Keyword> getKeywords() throws IllegalArgumentException;
-	Boolean doesKeyExist(String key) throws IllegalArgumentException;
+	Boolean doesKeyExistGlobally(String key) throws IllegalArgumentException;
 }

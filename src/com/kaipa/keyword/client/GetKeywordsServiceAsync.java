@@ -9,6 +9,6 @@ public interface GetKeywordsServiceAsync {
 
 	void getKeywords(AsyncCallback<List<Keyword>> callback);
 
-	void doesKeyExist(String key, AsyncCallback<Boolean> callback);
+	void doesKeyExistGlobally(String key, AsyncCallback<Boolean> callback);
 
 }
