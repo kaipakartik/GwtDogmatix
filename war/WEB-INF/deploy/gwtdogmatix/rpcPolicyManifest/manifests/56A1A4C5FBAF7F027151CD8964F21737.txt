@@ -1,2 +1,2 @@
 serviceClass: com.kaipa.keyword.client.GetKeywordsService
-path: 7C830F27ED787EBD82E4BEE23191A996.gwt.rpc
+path: 95C51C8B9CEDC29EA9AC31153C025853.gwt.rpc

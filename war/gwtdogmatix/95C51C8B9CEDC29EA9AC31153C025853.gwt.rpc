@@ -4,6 +4,7 @@ com.google.gwt.user.client.rpc.XsrfToken, false, false, true, true, com.google.g
 com.kaipa.keyword.client.GetKeywordsService, false, false, false, false, _, 3078458425
 com.kaipa.keyword.shared.Keyword, true, true, false, false, com.kaipa.keyword.shared.Keyword/2542817229, 2542817229
 [Lcom.kaipa.keyword.shared.Keyword;, true, true, false, false, [Lcom.kaipa.keyword.shared.Keyword;/951361996, 951361996
+java.lang.Boolean, true, true, false, false, java.lang.Boolean/476441737, 476441737
 java.lang.Exception, true, false, true, false, java.lang.Exception/1920171873, 1920171873
 java.lang.IllegalArgumentException, true, true, false, false, java.lang.IllegalArgumentException/1755012560, 1755012560
 java.lang.NumberFormatException, true, true, false, false, java.lang.NumberFormatException/3305228476, 3305228476

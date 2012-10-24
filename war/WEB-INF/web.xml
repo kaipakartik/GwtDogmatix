@@ -2,6 +2,17 @@
 	<listener>
 		<listener-class>com.kaipa.keyword.server.ContextInitializer</listener-class>
 	</listener>	
+  <filter>
+        <filter-name>UrlRewriteFilter</filter-name>
+        <filter-class>org.tuckey.web.filters.urlrewrite.UrlRewriteFilter</filter-class>
+    </filter>
+    <filter-mapping>
+        <filter-name>UrlRewriteFilter</filter-name>
+        <url-pattern>/*</url-pattern>
+        <dispatcher>REQUEST</dispatcher>
+        <dispatcher>FORWARD</dispatcher>
+    </filter-mapping>
+  
   <!-- Servlets -->
   <servlet>
     <servlet-name>greetServlet</servlet-name>
@@ -45,7 +56,7 @@
 	</servlet>
 	<servlet-mapping>
 		<servlet-name>Keyword</servlet-name>
-		<url-pattern>/key</url-pattern>
+		<url-pattern>/key/key</url-pattern>
 	</servlet-mapping>
   
   

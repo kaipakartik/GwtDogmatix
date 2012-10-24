@@ -33,4 +33,10 @@ public class GetKeywordsServiceImpl extends RemoteServiceServlet implements
 		NamespaceManager.set("");
 		return keywords;
 	}
+
+	@Override
+	public Boolean doesKeyExist(String key) throws IllegalArgumentException {
+		Keyword keyword = KeywordDatastore.findForUser(key);
+		return keyword != null;
+	}
 }
