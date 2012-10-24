@@ -13,6 +13,12 @@ public class Activity implements SearchWidget.Presenter, AddWidget.Presenter {
 			.create(GetKeywordsService.class);
 	private final DeleteServiceAsync deleteService = GWT
 			.create(DeleteService.class);
+	
+	private final GwtDogmatix view;
+	
+	public Activity(GwtDogmatix view) {
+		this.view = view;
+	}
 
 	@Override
 	public void goToLink(final String key) {
@@ -42,6 +48,7 @@ public class Activity implements SearchWidget.Presenter, AddWidget.Presenter {
 			}
 
 			public void onSuccess(String result) {
+				view.clearAddWidget();
 			}
 		});
 

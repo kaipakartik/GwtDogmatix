@@ -16,10 +16,11 @@ import com.google.gwt.user.client.ui.Widget;
  * Entry point classes define <code>onModuleLoad()</code>.
  */
 public class AddWidget extends Composite {
-	interface MyUiBinder extends UiBinder<Widget, AddWidget> {
-	}
+	private static AddWidgetUiBinder uiBinder = GWT
+			.create(AddWidgetUiBinder.class);
 
-	private static MyUiBinder uiBinder = GWT.create(AddWidget.class);
+	interface AddWidgetUiBinder extends UiBinder<Widget, AddWidget> {
+	}
 
 	public interface Presenter {
 		public void add(String key, String url);
@@ -36,6 +37,7 @@ public class AddWidget extends Composite {
 
 	public AddWidget() {
 		initWidget(uiBinder.createAndBindUi(this));
+		urlBox.setText("http://");
 	}
 
 	public void setPresenter(Presenter presenter) {
@@ -60,9 +62,16 @@ public class AddWidget extends Composite {
 	public void handleEnable(KeyUpEvent event) {
 		addButton.setEnabled(shouldEnableAddButton());
 	}
+	
+	public void clear() {
+		keyBox.setText("");
+		urlBox.setText("http://");
+		addButton.setEnabled(shouldEnableAddButton());
+		keyBox.setFocus(true);
+	}
 
 	private boolean shouldEnableAddButton() {
 		return keyBox.getText().trim().length() > 0
-				&& urlBox.getText().trim().length() > 0;
+				&& urlBox.getText().trim().length() > 7;
 	}
 }

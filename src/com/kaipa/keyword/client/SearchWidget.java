@@ -12,15 +12,12 @@ import com.google.gwt.user.client.ui.Composite;
 import com.google.gwt.user.client.ui.TextBox;
 import com.google.gwt.user.client.ui.Widget;
 
-/**
- * Entry point classes define <code>onModuleLoad()</code>.
- */
 public class SearchWidget extends Composite {
-	interface MyUiBinder extends UiBinder<Widget, SearchWidget> {
+	private static SearchWidgetUiBinder uiBinder = GWT
+			.create(SearchWidgetUiBinder.class);
+
+	interface SearchWidgetUiBinder extends UiBinder<Widget, SearchWidget> {
 	}
-
-	private static MyUiBinder uiBinder = GWT.create(SearchWidget.class);
-
 	public interface Presenter {
 		public void goToLink(String key);
 	}

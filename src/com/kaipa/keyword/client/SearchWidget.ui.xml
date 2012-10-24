@@ -1,8 +1,9 @@
-<ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
-	xmlns:g='urn:import:com.google.gwt.user.client.ui'>
-	<g:HorizontalPanel ui:field='goPanel'>
+<!DOCTYPE ui:UiBinder SYSTEM "http://dl.google.com/gwt/DTD/xhtml.ent">
+<ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
+	xmlns:g="urn:import:com.google.gwt.user.client.ui">
+	<g:HorizontalPanel>
 		<g:Label>Key</g:Label>
 		<g:TextBox ui:field='goBox'></g:TextBox>
 		<g:Button ui:field='goButton' enabled="false">Go</g:Button>
 	</g:HorizontalPanel>
-</ui:UiBinder>
+</ui:UiBinder> 
