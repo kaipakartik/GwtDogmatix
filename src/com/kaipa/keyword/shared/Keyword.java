@@ -62,5 +62,9 @@ public class Keyword implements Serializable {
 	public void setSearch(String search) {
 		this.search = search;
 	}
+	
+	public long getCount() {
+		return count;
+	}
 
 }

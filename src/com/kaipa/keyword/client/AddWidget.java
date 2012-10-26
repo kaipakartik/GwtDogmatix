@@ -74,4 +74,9 @@ public class AddWidget extends Composite {
 		return keyBox.getText().trim().length() > 0
 				&& urlBox.getText().trim().length() > 7;
 	}
+
+	public void setKey(String key) {
+		keyBox.setText(key);
+		urlBox.setFocus(true);
+	}
 }
