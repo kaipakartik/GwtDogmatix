@@ -1,2 +1,0 @@
-serviceClass: com.kaipa.keyword.client.AddService
-path: E11150C64FAC9D93DB175BE4ECC1F984.gwt.rpc
