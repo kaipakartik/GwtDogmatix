@@ -1,7 +1,10 @@
 package com.kaipa.keyword.server;
 
+import org.apache.commons.validator.routines.UrlValidator;
+
 import com.google.gwt.user.server.rpc.RemoteServiceServlet;
 import com.kaipa.keyword.client.AddService;
+import com.kaipa.keyword.shared.FieldVerifier;
 import com.kaipa.keyword.shared.Keyword;
 
 /**
@@ -11,11 +14,13 @@ import com.kaipa.keyword.shared.Keyword;
 public class AddServiceImpl extends RemoteServiceServlet implements AddService {
 
 	@Override
-	public String add(String key, String url) throws IllegalArgumentException {
+	public Boolean add(String key, String url) throws IllegalArgumentException {
+		UrlValidator urlValidator = new UrlValidator();
 		key = key.toLowerCase();
-		if (KeywordDatastore.findForUser(key) == null) {
+		if (KeywordDatastore.findForUser(key) == null && urlValidator.isValid(url) && FieldVerifier.isValidKey(key)) {
 			KeywordDatastore.save(new Keyword(key, url));
+			return true;
 		}
-		return "";
+		return false;
 	}
 }

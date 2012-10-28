@@ -72,7 +72,7 @@ public class AddWidget extends Composite {
 
 	private boolean shouldEnableAddButton() {
 		return keyBox.getText().trim().length() > 0
-				&& urlBox.getText().trim().length() > 7;
+				&& urlBox.getText().trim().lastIndexOf("://") != urlBox.getText().trim().length();
 	}
 
 	public void setKey(String key) {

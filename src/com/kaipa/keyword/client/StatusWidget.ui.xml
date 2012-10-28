@@ -1,6 +1,15 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
     xmlns:g='urn:import:com.google.gwt.user.client.ui'>
+<ui:style type="com.kaipa.keyword.client.StatusWidget.StatusStyle">
+    .error {
+    	color:red;
+	}
 
+    .success {
+    	color:#090;
+	}
+</ui:style>
+    
 	<g:HorizontalPanel>
 		<g:Label ui:field='status'></g:Label>
 	</g:HorizontalPanel>

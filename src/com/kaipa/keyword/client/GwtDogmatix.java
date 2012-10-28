@@ -4,12 +4,14 @@ import java.util.Comparator;
 import java.util.List;
 
 import com.google.gwt.cell.client.ButtonCell;
+import com.google.gwt.cell.client.ClickableTextCell;
 import com.google.gwt.cell.client.FieldUpdater;
 import com.google.gwt.core.client.EntryPoint;
 import com.google.gwt.user.cellview.client.CellTable;
 import com.google.gwt.user.cellview.client.Column;
 import com.google.gwt.user.cellview.client.ColumnSortEvent.ListHandler;
 import com.google.gwt.user.cellview.client.TextColumn;
+import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.ui.RootPanel;
 import com.google.gwt.view.client.ListDataProvider;
 import com.kaipa.keyword.shared.Keyword;
@@ -23,9 +25,9 @@ public class GwtDogmatix implements EntryPoint {
 	private StatusWidget statusWidget = new StatusWidget();
 	private Activity activity;
 	
-	private  TextColumn<Keyword> nameColumn;
-	private TextColumn<Keyword> addressColumn;
-	private TextColumn<Keyword> countColumn;
+	private  Column<Keyword, String> nameColumn;
+	private Column<Keyword, String> addressColumn;
+	private Column<Keyword, String> countColumn;
 	private Column<Keyword, String> deleteColumn;
 
 	ListDataProvider<Keyword> dataProvider;
@@ -40,29 +42,44 @@ public class GwtDogmatix implements EntryPoint {
 		rootPanel.add(statusWidget);
 		rootPanel.add(addWidget);
 		
-		
 		// Setup the celltable
 		// Create name column.
-	    TextColumn<Keyword> nameColumn = new TextColumn<Keyword>() {
-	      @Override
-	      public String getValue(Keyword keyword) {
-	        return keyword.getKeyword();
-	      }
+	    nameColumn = new Column<Keyword, String>(new  ClickableTextCell()){
+	        @Override
+	        public String getValue(Keyword keyword){
+	            return keyword.getKeyword();
+	        }
+
 	    };
+
+	    nameColumn.setFieldUpdater(new FieldUpdater<Keyword, String>(){
+	        @Override
+	        public void update(int index, Keyword keyword, String value){
+	        	Window.Location.assign("/" + keyword.getKeyword());
+	        }
+	    });
 
 	    // Make the name column sortable.
 	    nameColumn.setSortable(true);
 	    
-	 // Create address column.
-	    addressColumn = new TextColumn<Keyword>() {
-	      @Override
-	      public String getValue(Keyword keyword) {
-	        return keyword.getUrl();
-	      }
+	    // Create address column.
+	    addressColumn = new Column<Keyword, String>(new  ClickableTextCell()){
+	        @Override
+	        public String getValue(Keyword keyword){
+	            return keyword.getUrl();
+	        }
+
 	    };
+
+	    addressColumn.setFieldUpdater(new FieldUpdater<Keyword, String>(){
+	        @Override
+	        public void update(int index, Keyword keyword, String value){
+	        	Window.Location.assign("/" + keyword.getKeyword());
+	        }
+	    });
 	    addressColumn.setSortable(true);
 
-	    // Create address column.
+	    // Create count column.
 	    countColumn = new TextColumn<Keyword>() {
 	    	@Override
 	    	public String getValue(Keyword keyword) {
@@ -91,6 +108,7 @@ public class GwtDogmatix implements EntryPoint {
 	    table.addColumn(addressColumn, "Url");
 	    table.addColumn(countColumn, "Count");
 	    table.addColumn(deleteColumn, "Delete");
+	    table.setVisibleRange(0, 100);
 	    activity.getKeywords();
 	    rootPanel.add(table);
 	}

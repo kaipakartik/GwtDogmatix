@@ -15,15 +15,6 @@
   
   <!-- Servlets -->
   <servlet>
-    <servlet-name>greetServlet</servlet-name>
-    <servlet-class>com.kaipa.keyword.server.GreetingServiceImpl</servlet-class>
-  </servlet>
-  <servlet-mapping>
-    <servlet-name>greetServlet</servlet-name>
-    <url-pattern>/gwtdogmatix/greet</url-pattern>
-  </servlet-mapping>
-
-  <servlet>
     <servlet-name>addServlet</servlet-name>
     <servlet-class>com.kaipa.keyword.server.AddServiceImpl</servlet-class>
   </servlet>

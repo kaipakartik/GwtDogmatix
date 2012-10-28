@@ -7,6 +7,7 @@ import java.util.Set;
 import com.google.gwt.core.client.GWT;
 import com.google.gwt.user.client.Window;
 import com.google.gwt.user.client.rpc.AsyncCallback;
+import com.kaipa.keyword.shared.FieldVerifier;
 import com.kaipa.keyword.shared.Keyword;
 
 /**
@@ -52,19 +53,27 @@ public class Activity implements SearchWidget.Presenter, AddWidget.Presenter {
 
 	@Override
 	public void add(final String key, final String url) {
+		if (!FieldVerifier.isValidKey(key)) {
+			view.setError("Key is invalid. A key can only have small letters, capital letters, digits and underscores");
+			return;
+		}
 		if (!addKeyword(key)) {
 			view.setError("Key " + key +" already exists");
 			return;
 		}
-		addService.add(key, url, new AsyncCallback<String>() {
+		addService.add(key, url, new AsyncCallback<Boolean>() {
 			public void onFailure(Throwable caught) {
 				view.setError(SERVER_ERROR);
 			}
-			public void onSuccess(String result) {
-				view.clearAddWidget();
-				Keyword keyword = new Keyword(key, url);
-				view.addKeyword(keyword);
-				view.setSuccess("Added " + key +"-> " + url + " successfully");
+			public void onSuccess(Boolean result) {
+				if (result) {
+					view.clearAddWidget();
+					Keyword keyword = new Keyword(key, url);
+					view.addKeyword(keyword);
+					view.setSuccess("Added " + key +"-> " + url + " successfully");
+				} else {
+					view.setError("Oops something went wrong. Either the url or keyword was improper.");
+				}
 			}
 		});
 	}

@@ -1,12 +1,15 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
     xmlns:g='urn:import:com.google.gwt.user.client.ui'>
-
-	<g:HorizontalPanel>
-		<g:Label>Key</g:Label>
-		<g:TextBox ui:field='keyBox'></g:TextBox>
-		<g:Label>Url</g:Label>
-		<g:TextBox ui:field='urlBox'></g:TextBox>
-		<g:Button ui:field='addButton' enabled="false">Add</g:Button>
-	</g:HorizontalPanel>
+	<g:VerticalPanel>
+		<g:Label>Add a key for a url here. The best way to do is copy addresses from your browser.</g:Label>
+		<g:Label>That way you can be sure that you won't make any errors while setting the keyword.</g:Label>	    
+		<g:HorizontalPanel>
+			<g:Label>Key</g:Label>
+			<g:TextBox ui:field='keyBox'></g:TextBox>
+			<g:Label>Url</g:Label>
+			<g:TextBox ui:field='urlBox'></g:TextBox>
+			<g:Button ui:field='addButton' enabled="false">Add</g:Button>
+		</g:HorizontalPanel>
+	</g:VerticalPanel>
 
 </ui:UiBinder>
