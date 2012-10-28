@@ -1,7 +1,7 @@
 <ui:UiBinder xmlns:ui='urn:ui:com.google.gwt.uibinder'
     xmlns:g='urn:import:com.google.gwt.user.client.ui'>
 	<g:VerticalPanel>
-		<g:Label>Add a key for a url here. The best way to do is copy addresses from your browser.(To avoid errors)</g:Label>
+		<g:Label>Add a key for a url here. The best way to do so is copy addresses from your browser.(To avoid errors)</g:Label>
 		<g:InlineHTML>For example enter <b>hn</b> as a key and <b>htttp://news.ycombinator</b> as the url</g:InlineHTML>
 		<g:HorizontalPanel>
 			<g:Label>Key</g:Label>

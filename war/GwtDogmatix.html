@@ -6,6 +6,24 @@
 
 <html>
   <head>
+  <!-- Start of Woopra Code -->
+<script type="text/javascript">
+function woopraReady(tracker) {
+    tracker.setDomain('kkey.in');
+    tracker.setIdleTimeout(300000);
+    tracker.trackPageview({type:'pageview',url:window.location.pathname+window.location.search,title:document.title});
+    return false;
+}
+(function() {
+    var wsc = document.createElement('script');
+    wsc.src = document.location.protocol+'//static.woopra.com/js/woopra.js';
+    wsc.type = 'text/javascript';
+    wsc.async = true;
+    var ssc = document.getElementsByTagName('script')[0];
+    ssc.parentNode.insertBefore(wsc, ssc);
+})();
+</script>
+<!-- End of Woopra Code -->
     <meta http-equiv="content-type" content="text/html; charset=UTF-8">
 
     <!--                                                               -->
@@ -24,10 +42,11 @@
     <!-- be added before this line.                -->
     <!--                                           -->
     <script type="text/javascript" language="javascript" src="gwtdogmatix/gwtdogmatix.nocache.js"></script>
-  <script type="text/javascript">
+<script type="text/javascript">
 
   var _gaq = _gaq || [];
   _gaq.push(['_setAccount', 'UA-35906696-1']);
+  _gaq.push(['_setDomainName', 'kkey.in']);
   _gaq.push(['_trackPageview']);
 
   (function() {

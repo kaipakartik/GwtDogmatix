@@ -8,7 +8,7 @@
 			<g:TextBox ui:field='goBox'></g:TextBox>
 			<g:Button ui:field='goButton' enabled="false">Go</g:Button>
 		</g:HorizontalPanel>
-		<g:InlineHTML>Add http://kkey.in/%s as a search engine on chrome. Follow the instructions <a href="http://blog.kaipakartik.com/2012/10/announcing-personal-keys-for-web-kkeyin.html" target="_blank">here.</a></g:InlineHTML>
 		<g:InlineHTML>Some defaults have been added. Try <b>'m', 'fb' , 'tm' or 'w'</b> above</g:InlineHTML>
+		<g:InlineHTML>Add http://kkey.in/%s as a search engine on chrome. Follow the instructions <a href="http://blog.kaipakartik.com/2012/10/announcing-personal-keys-for-web-kkeyin.html" target="_blank">here.</a></g:InlineHTML>
 	</g:VerticalPanel>
 </ui:UiBinder> 

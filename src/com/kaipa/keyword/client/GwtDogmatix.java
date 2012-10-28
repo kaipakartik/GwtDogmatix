@@ -105,7 +105,7 @@ public class GwtDogmatix implements EntryPoint {
 	    // Add the columns.
 	    table.addColumn(nameColumn, "Key");
 	    table.addColumn(addressColumn, "Url");
-	    table.addColumn(countColumn, "Count");
+	    table.addColumn(countColumn, "# Visits");
 	    table.addColumn(deleteColumn, "Delete");
 	    table.setVisibleRange(0, 100);
 	    activity.getKeywords();
