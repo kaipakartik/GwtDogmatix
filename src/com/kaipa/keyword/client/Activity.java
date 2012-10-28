@@ -70,7 +70,8 @@ public class Activity implements SearchWidget.Presenter, AddWidget.Presenter {
 					view.clearAddWidget();
 					Keyword keyword = new Keyword(key, url);
 					view.addKeyword(keyword);
-					view.setSuccess("Added " + key +"-> " + url + " successfully");
+					view.setSuccess("Added " + key +"-> " + url + " successfully. Go to <a href="+key+">" + Window.Location.getProtocol() + "//" + Window.Location.getHost() + "/" + key + "</a> to use your newly created keyword.") ;
+					
 				} else {
 					view.setError("Oops something went wrong. Either the url or keyword was improper.");
 				}
@@ -118,7 +119,7 @@ public class Activity implements SearchWidget.Presenter, AddWidget.Presenter {
 
 			@Override
 			public void onSuccess(String result) {
-				view.setSuccess("Successfully deleted");
+				view.setSuccess("Successfully deleted " + key);
 				removeKeyword(key);
 				view.removeKeyword(key);
 			}

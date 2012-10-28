@@ -5,7 +5,7 @@ import com.google.gwt.resources.client.CssResource;
 import com.google.gwt.uibinder.client.UiBinder;
 import com.google.gwt.uibinder.client.UiField;
 import com.google.gwt.user.client.ui.Composite;
-import com.google.gwt.user.client.ui.Label;
+import com.google.gwt.user.client.ui.InlineHTML;
 import com.google.gwt.user.client.ui.Widget;
 
 public class StatusWidget extends Composite {
@@ -19,20 +19,20 @@ public class StatusWidget extends Composite {
 	interface StatusWidgetUiBinder extends UiBinder<Widget, StatusWidget> {
 	}
 
-	@UiField Label status;
-	 @UiField StatusStyle style;
+	@UiField InlineHTML status;
+	@UiField StatusStyle style;
 	
 	public StatusWidget() {
 		initWidget(uiBinder.createAndBindUi(this));
 	}
 	
 	public void setError(String error) {
-		status.setText(error);
+		status.setHTML(error);
 		status.setStyleName(style.error());
 	}
 	
 	public void setSuccess(String success) {
-		status.setText(success);
+		status.setHTML(success);
 		status.setStyleName(style.success());
 	}
 	

@@ -19,7 +19,7 @@ public class KeywordDatastore {
 			return null;
 		}
 	}
-	
+
 	public static Keyword findInGlobalAsWell(String key) {
 		Objectify service = getService();
 		try {

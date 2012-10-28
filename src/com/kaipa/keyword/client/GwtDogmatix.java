@@ -36,11 +36,10 @@ public class GwtDogmatix implements EntryPoint {
 
 	public void onModuleLoad() {
 		activity = new Activity(this);
-		RootPanel rootPanel = RootPanel.get();
 		setPresenter();
-		rootPanel.add(searchWidget);
-		rootPanel.add(statusWidget);
-		rootPanel.add(addWidget);
+		RootPanel.get("go").add(searchWidget);
+		RootPanel.get("status").add(statusWidget);
+		RootPanel.get("add").add(addWidget);
 		
 		// Setup the celltable
 		// Create name column.
@@ -110,7 +109,13 @@ public class GwtDogmatix implements EntryPoint {
 	    table.addColumn(deleteColumn, "Delete");
 	    table.setVisibleRange(0, 100);
 	    activity.getKeywords();
-	    rootPanel.add(table);
+	    RootPanel.get("keywords").add(table);
+	    String key = Window.Location.getParameter("k");
+	    if (key != null) {
+	    	setKey(key);
+	    } else {
+	    	searchWidget.goBox.setFocus(true);
+	    }
 	}
 	
 	private void setPresenter() {
