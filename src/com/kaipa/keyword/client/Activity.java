@@ -64,6 +64,7 @@ public class Activity implements SearchWidget.Presenter, AddWidget.Presenter {
 		addService.add(key, url, new AsyncCallback<Boolean>() {
 			public void onFailure(Throwable caught) {
 				view.setError(SERVER_ERROR);
+				keys.remove(key);
 			}
 			public void onSuccess(Boolean result) {
 				if (result) {
@@ -74,6 +75,7 @@ public class Activity implements SearchWidget.Presenter, AddWidget.Presenter {
 					
 				} else {
 					view.setError("Oops something went wrong. Either the url or keyword was improper.");
+					keys.remove(key);
 				}
 			}
 		});

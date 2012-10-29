@@ -2,13 +2,7 @@
 <ui:UiBinder xmlns:ui="urn:ui:com.google.gwt.uibinder"
 	xmlns:g="urn:import:com.google.gwt.user.client.ui">
 	<g:VerticalPanel>
-		<g:Label>Enter a keyword here to go to the address. You can just go to http://kkey.in/%s to go to the page</g:Label>	    
-		<g:HorizontalPanel>
-			<g:Label>Key</g:Label>
-			<g:TextBox ui:field='goBox'></g:TextBox>
-			<g:Button ui:field='goButton' enabled="false">Go</g:Button>
-		</g:HorizontalPanel>
-		<g:InlineHTML>Some defaults have been added. Try <b>'m', 'fb' , 'tm' or 'w'</b> above</g:InlineHTML>
-		<g:InlineHTML>Add http://kkey.in/%s as a search engine on chrome. Follow the instructions <a href="http://blog.kaipakartik.com/2012/10/announcing-personal-keys-for-web-kkeyin.html" target="_blank">here.</a></g:InlineHTML>
+		<g:InlineHTML>Some defaults have been added. Try <b><a href="http://kkey.in/m">kkey.in/m</a>(gmail), <a href="http://kkey.in/fb">kkey.in/fb</a>(facebook), <a href="http://kkey.in/tm">kkey.in/tm</a>(techmeme)or <a href="http://kkey.in/w">kkey.in/w</a>(wired)</b></g:InlineHTML>
+		<g:InlineHTML>Add <b>http://kkey.in/%s</b> as a search engine on chrome(<b>This is cool</b>) by following the instructions <a href="https://www.dropbox.com/s/yctwpg8yj0k8k5l/kkey_add.png" target="_blank">here.</a></g:InlineHTML>
 	</g:VerticalPanel>
 </ui:UiBinder> 

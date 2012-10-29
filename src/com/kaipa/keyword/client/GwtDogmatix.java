@@ -114,7 +114,7 @@ public class GwtDogmatix implements EntryPoint {
 	    if (key != null) {
 	    	setKey(key);
 	    } else {
-	    	searchWidget.goBox.setFocus(true);
+	    	addWidget.keyBox.setFocus(true);
 	    }
 	}
 	
