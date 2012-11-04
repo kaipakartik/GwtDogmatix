@@ -3,6 +3,6 @@
 	xmlns:g="urn:import:com.google.gwt.user.client.ui">
 	<g:VerticalPanel>
 		<g:InlineHTML>Some defaults have been added. Try <b><a href="http://kkey.in/m">kkey.in/m</a>(gmail), <a href="http://kkey.in/fb">kkey.in/fb</a>(facebook), <a href="http://kkey.in/tm">kkey.in/tm</a>(techmeme)or <a href="http://kkey.in/w">kkey.in/w</a>(wired)</b></g:InlineHTML>
-		<g:InlineHTML>Add <b>http://kkey.in/%s</b> as a search engine on chrome(<b>This is cool</b>) by following the instructions <a href="https://www.dropbox.com/s/yctwpg8yj0k8k5l/kkey_add.png" target="_blank">here.</a></g:InlineHTML>
+		<g:InlineHTML>Add <b>http://kkey.in/%s</b> as a search engine on chrome(<b>This is cool</b>) by following the <b>instructions <a href="https://www.dropbox.com/s/yctwpg8yj0k8k5l/kkey_add.png" target="_blank">here.</a></b></g:InlineHTML>
 	</g:VerticalPanel>
 </ui:UiBinder> 
